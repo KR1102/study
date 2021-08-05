@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //slice()
+        var str = "Apple, Banana, Mango";
+        var res = str.slice(7, 13);
+        console.log(res); //Banana
+        var res1 = str.slice(-13, -7);
+        console.log(res1); //Banana 
+        var res2 = str.slice(7);
+        console.log(res2); //Banana, Mango
+        var res3 = str.slice(-13);
+        console.log(res3); //Banana, Mango
+        var res4 = str.slice(-2);
+        console.log(res4); //Banana, Mango
+        //substring()索引值不能是负值
+        var res5 = str.substring(7, 13);
+        console.log(res5); //Banana
+        //substr() 方法substr() 类似于 slice()。不同之处在于第二个参数规定被提取部分的长度。
+        var res6 = str.substr(7, 10);
+        console.log(res6); //Banana
+    </script>
+</body>
+
+</html>

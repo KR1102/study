@@ -17,3 +17,4 @@
     var x = 911 + 7 + "Porsche";// x = "918Porsche"
     var x = "Porsche" + 911 + 7; // x = "Porsche9117"
 5.typeof 运算符对数组、对象、null，返回 "object"，因为在 JavaScript 中数组属于对象。
+  JavaScript 对象无法进行对比，比较两个 JavaScript 将始终返回 false。
