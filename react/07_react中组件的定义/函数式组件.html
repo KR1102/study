@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+    <!-- 引入react核心库 -->
+    <script src="../js/react.development.js"></script>
+    <!-- 引入react-dom。用于支持react操作dom -->
+    <script src="../js/react-dom.development.js"></script>
+    <!-- 引入babel,用于将jsx转化为js -->
+    <script src="../js/babel.min.js"></script>
+    <script type="text/babel">/*此处一定要写babel  翻译jsx后开启严格模式不然自定义函数中的this指向window*/
+        // 1.创建虚拟dom 
+//       const VDOM =<h1>hello,react</h1>/*不需要引号，不是字符串*/
+//函数定义首字母大写
+		function Demo(){
+			return <h2>123</h2>
+		}
+		函数式组件
+        
+//    将函数名作为标签名渲染
+         ReactDOM.render(<Demo/>,document.getElementById('test'));
+
+/*
+		执行了 ReactDOM.render(<Demo/>,document.getElementById('test'));之后发生了什么？
+		1.React解析组件标签，找到Demo组件
+		2.发现组件是使用函数定义的，随后调用改函数，将返回的虚拟Dom转化成真实DOM，随后呈现在页面当中；
+*/
+    </script>
+</body>
+
+</html>
