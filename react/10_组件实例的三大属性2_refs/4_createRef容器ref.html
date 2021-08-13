@@ -18,38 +18,30 @@
     <!-- 引入babel,用于将jsx转化为js -->
     <script src="../js/babel.min.js"></script>
     <script type="text/babel">/*此处一定要写babel*/
-   
-        class MYComponent extends React.Component{
-            
-        	constructor(props){
-        		super(props)
-        		this.state={isHot:true,wind:'微风'
-                }
-                this.dome=this.dome.bind(this)
-
-        	}
-
-            
-        	dome(){
-               
-               
-                const isHot=this.state.isHot;
-                this.setState({
-                    isHot:!isHot
-                })
+     class Dome extends React.Component{
+          
+            myRef = React.createRef();
+            go=()=>{
+               alert(this.myRef.current.value);
             }
-
            
-        	render(){
-                const {isHot,wind} = this.state;
-        		return <h1 onClick={this.dome}>今天天气很{isHot?'炎热':'凉爽'+wind}</h1>
-        	}
-            
+            render() {
+               
+                return(                            
+                    
+                    <div>
+                        
+                      <input ref={this.myRef}  type="text"/>
+                        <button onClick={this.go}>点击显示数据</button>
+                        
+                    </div>
+                    
+                )
+            }
         }
-        
-  
-         ReactDOM.render(<MYComponent/>,document.getElementById('test'));
-       
+         
+         /*2.渲染虚拟Dom到页面*/
+         ReactDOM.render(<Dome/>,document.getElementById('test'));
 
     </script>
 </body>
